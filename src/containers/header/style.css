@@ -1,0 +1,41 @@
+@import '~antd/dist/antd.css';
+.container{
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+}
+.ant-layout-header ul{
+    line-height: 63px!important;
+}
+.formStyle{
+    width: 70%;
+    margin-left: 15%;
+    text-align: center;
+    padding-top: 20px;
+}
+.loginButton{
+    width: 60%;
+}
+#components-layout-demo-top .logo {
+    width: 120px;
+    height: 31px;
+    background: rgba(255,255,255,.2);  
+    margin: 16px 24px 16px 0;
+    float: left;
+}
+.loginposition{
+    display: block;
+    width: 120px;
+    height: 63px;
+    line-height: 63px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    font-size: 20px;
+    background: #001529;
+    cursor: pointer;
+}
+

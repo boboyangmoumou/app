@@ -1,0 +1,173 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;   
+}
+/* header nav */
+.HeaderWrapper{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid rgba(7,17,27,0.1);
+    background-color: #eee; 
+}
+.HeaderWrapper ul{
+    display: flex;
+}
+.HeaderWrapper ul li{
+    flex: 1;
+    text-align: center;
+}
+.HeaderWrapper ul li a{
+    text-decoration: none;
+    display: block;
+    color: #000;
+    font-size: 14px;
+    line-height: 40px;
+    position: relative;
+}
+.HeaderWrapper ul li a:active{
+    color: rgb(240,20,20);
+  }
+.MainWrapper{
+    display: flex;
+    flex-direction: row;
+    width: 1000px;
+    margin: 0 auto;
+}
+.container{
+    margin-top: 100px;
+    flex: 1;
+}
+.container .title{
+    text-align: center;
+}
+.gellery {
+    flex: 1;
+    width: 470px;
+    height: 556px;
+}
+.AllStyle{
+    display: flex;
+    direction:row;
+    margin: 10px 0;
+}
+.AllStyle .inline{
+    width: 46px;
+    height: 30px;
+    line-height: 30px;
+    text-align: left;
+}
+.AllStyle .complit{
+    height: 30px;
+    line-height: 30px;
+    flex: 1;
+}
+.content li{
+     display: inline-block;
+     padding: 5px;
+     margin-left: 5px;
+     border: 1px solid #eee;
+     cursor: pointer;
+}
+._active{
+    border: 1px solid red!important;
+}
+.currentActive{
+    border: 1px solid red!important;
+}
+.shopCart{
+    color: #fff;
+    font-size: 14px;
+    font-weight:600;
+}
+.btn-block{
+    width: 100%;
+    border:none;
+    padding: 5px;
+    background-color: #f0595b;
+    cursor: pointer;
+    outline: none;
+    text-align: center
+}
+
+/* 购物车 */
+.cartWrapper{
+    width: 1000px;
+    margin: 0 auto;
+}
+.cart-heading{
+    display: flex;
+    width: 100%;
+    direction: row;
+    line-height: 20px;
+    padding: 10px;
+    background-color: #ebccd1;
+    color: #a94442;
+}
+.cart-heading .headcart{
+    flex:1;
+}
+.cart-heading .pull-right{
+    flex:0 0 1;
+}
+
+.cartBody {
+    min-height: 40px;
+    display: block;
+}
+.cartBody li{
+   display: flex;
+   direction: row;
+   margin: 5px 0;
+}
+.cartBody li .type{
+    width: 300px;
+    text-align: center;
+    background-color: #5cb85c;
+    margin-left: 20px;
+    color: #fff;
+    border-radius: 6px;
+}
+.cartBody li .count{
+    width: 20px;
+    text-align: center;
+    color: #fff;
+    background-color: #d9534f;
+    margin-left: 10px;
+    border-radius: 6px;
+}
+.cartBody li .price{
+    flex: 1 0 0;
+    padding: 0;
+    text-align: center;
+    color: #f0595b;
+} 
+.footer-btn{
+    margin: 0 auto;
+}
+.cartBody li .delete{
+    color: #f0595b;
+    width: 20px;
+    text-align: center;
+    background: #f0595b;
+    color: #fff;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.goodCount{
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    width: 24px;
+    height: 20px;
+    line-height: 20px;
+    border-radius:8px;
+    background-color: #d9534f;
+    color: #fff; 
+    display: inline-block;
+    margin-left: 8px;
+    position: absolute;
+    top: 11px;
+  }
