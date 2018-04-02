@@ -25,8 +25,10 @@ export const checkUserInfo = () => {
     return (dispatch) => {
         const apiUrl = "/user/checkUserInfo";
         setTimeout(() => {
-            dispatch(fetchStart());
-            return fetch(apiUrl).then((response) => {
+            // dispatch(fetchStart());
+            return fetch(apiUrl,{
+                    "credentials": 'include'
+            }).then((response) => {
                 if(response.status !== 200) {
                     throw new Error(`Fail ${response.status}`);
                 }

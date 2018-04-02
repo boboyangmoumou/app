@@ -42,10 +42,12 @@ export default class HeaderMenu extends Component {
             }
         },1000)        
     }
+    handleClick(item){
+        
+    }
     render() {
         const { visible, confirmLoading } = this.state;
-        const {login,userData} = this.props;
-        console.log(userData)
+        const {login,userData,UserInfo} = this.props;
         return (
             <Layout className="layout">
                 <Header>
@@ -54,14 +56,15 @@ export default class HeaderMenu extends Component {
                         theme="dark"
                         mode="horizontal"
                         defaultSelectedKeys={['2']}
-                        style={{ lineHeight: '64px' }}
+                        style={{ lineHeight: '63px' }}
+                        onClike={this.handleClick}
                     >
-                    <Menu.Item key="1">nav 1</Menu.Item>
-                    <Menu.Item key="2">nav 2</Menu.Item>
-                    <Menu.Item key="3">nav 3</Menu.Item>
+                    {/* <Menu.Item key="/">nav 1</Menu.Item>
+                    <Menu.Item key="/admin">nav 2</Menu.Item>
+                    <Menu.Item key="3">nav 3</Menu.Item>  */}
                     </Menu>
-                    <div className="loginposition">
-                        <div type="primary" onClick={this.showModal}>登录</div>
+                    <div className="loginposition">     
+                    { UserInfo ||  userData.result  ? <Logined loginedInfo={UserInfo ||  userData.result.userName}/> : <div type="primary" onClick={this.showModal}>登录</div>}                                                                       
                         <Modal 
                             title="登录"
                             visible={visible}
@@ -69,9 +72,7 @@ export default class HeaderMenu extends Component {
                             confirmLoading={confirmLoading}
                             onCancel={this.handleCancel}
                             footer={null}>
-                            {/* {userData ? <Logined userData={userData}/> : */}
                             <LoginForm login={login} onLogin={this.handleLogin.bind(this)}/>
-                            {/* } */}
                         </Modal>
                     </div>
                 </Header>

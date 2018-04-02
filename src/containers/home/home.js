@@ -3,12 +3,7 @@ import {connect} from 'react-redux';
 import {
     fetchShopcart 
 } from '../../redux/actions/index';
-import {
-    fetchUser
-} from '../../redux/actions/user';
 import HomeView from '../component/homeView';
-import HeaderMenu from '../header/header';
-// import StylePhone from '../component/StylePhone';
 import '../component/homeView.css';
 class Home extends Component {
     constructor(props) {
@@ -24,10 +19,9 @@ class Home extends Component {
         console.log(comment);
     }
     render() {
-        let {name,desc,price,style,isSelected,activeStyleUrl,storage,status,login,userData} = this.props;
+        let {name,desc,price,style,isSelected,activeStyleUrl,storage,status} = this.props;
         return(
             <div className="containerwrapper">
-                <HeaderMenu login={login} userData={userData}/>
                 <HomeView 
                 status = {status}
                 name = {name}
@@ -45,7 +39,7 @@ class Home extends Component {
 }
 const mapStateToProps = (state) => {
     const goodData = state.newreducer;
-    const userData = state.userReducer;
+    
     return {
         status: goodData.status,
         desc: goodData.desc,
@@ -54,8 +48,7 @@ const mapStateToProps = (state) => {
         style: goodData.style,
         isSelected: goodData.isSelected,
         activeStyleUrl: goodData.activeStyleUrl,
-        storage: goodData.storage,
-        userData: userData
+        storage: goodData.storage,        
     }
 }
 const mapDispatchToProps = (dispatch) => {
@@ -63,10 +56,7 @@ const mapDispatchToProps = (dispatch) => {
         onSelectCity: () => {
             dispatch(fetchShopcart());
         },
-        login: (userName,userPwd) => {
-            console.log(userName,userPwd);
-            dispatch(fetchUser(userName,userPwd))
-        }
+        
     }       
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Home)

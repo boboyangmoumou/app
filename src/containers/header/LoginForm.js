@@ -13,7 +13,6 @@ class LoginFormCom extends Component{
             if(!err) {
                 this.props.login(values.userName, values.password)
                 this.props.onLogin(values.userName)
-                console.log(values.userName,values.password);
             }
         });
     }

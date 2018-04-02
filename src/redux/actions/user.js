@@ -1,3 +1,4 @@
+import axios from 'axios';
 export const actionsTypes = {
     FETCH_START: "FETCH_START",
     FETCH_END: "FETCH_END",
@@ -26,31 +27,33 @@ export const actions = {
     fetch_end:() => ({
         type: actionsTypes.FETCH_END
     }),
-    reaponse_data: (data) => ({
+    response_data: (data) => ({
         type: actionsTypes.RESPONSE_USER_INFO,
         data
     })
 }
+
 export const fetchUser = (userName,userPwd) => {
     return (dispatch) => {
         const apiUrl = "/user/login"
-        dispatch(actions.fetch_start())
-        return fetch(apiUrl, {
+        return axios(apiUrl,{
             method: 'POST',
             headers: {
-                "Content-Type": "application/x-www-form-urlencoded"
+                'Content-Type': 'application/json',
+                "credentials": 'include'
             },
-            body: `userName=${userName}&userPwd=${userPwd}`
+            data: {
+                userName:userName,
+                userPwd:userPwd
+            }            
         }).then((response) => {
-            if(response.status !==200) {
+            if(response.status !== 200) {
                 throw new Error(`Fail ${response.status}`)
             }
-            response.json().then((responseJson) => {
-                console.log(responseJson.msg)
-                dispatch(actions.clear_msg(responseJson.msg,responseJson.status));
-                dispatch(actions.reaponse_data(responseJson))
-            })
-            dispatch(actions.fetch_end())
+            console.log(response.data)
+            // dispatch(actions.clear_msg(responseJson.msg,response.status));
+            dispatch(actions.response_data(response.data))
+            // dispatch(actions.fetch_end())
         }).catch(() => {
             dispatch(actions.clear_msg())
         })
