@@ -3,12 +3,15 @@ import thunkMiddleware from 'redux-thunk';
 import {reducer as newreducer} from './reducers/index';
 import {userReducer} from './reducers/user';
 import {checkUser} from './reducers/checkUser'
+import {ArticleReducer,ArticleDetailReducer} from './reducers/article';
 const win = window;
 
 const reducer = combineReducers({
     checkUser: checkUser,
     newreducer: newreducer,
-    userReducer: userReducer
+    userReducer: userReducer,
+    ArticleReducer: ArticleReducer,
+    ArticleDetailReducer: ArticleDetailReducer
 })
 
 const middlewares = [thunkMiddleware];

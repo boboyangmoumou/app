@@ -100,6 +100,7 @@
     "extends": "react-app"
   },
   "devDependencies": {
-    "antd": "^3.3.3"
+    "antd": "^3.3.3",
+    "react-addons-pure-render-mixin": "^15.6.2"
   }
 }

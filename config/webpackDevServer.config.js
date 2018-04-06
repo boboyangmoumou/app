@@ -87,6 +87,13 @@ module.exports = function(proxy, allowedHost) {
           pathRewrite: {
             "^/v2": '/v2'
           }
+      },
+      "/index": {
+        "target": "http://localhost:3000",
+        "changeOrigin": true,
+        pathRewrite: {
+          "^/v2": '/v2'
+        }
       }
     },
     before(app) {

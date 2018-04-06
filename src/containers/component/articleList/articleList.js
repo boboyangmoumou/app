@@ -5,9 +5,14 @@ export default class ArticleList extends Component {
         super(props)
     }
     render() {
+        const {ArticleListData,history,getArticleDetail} = this.props;
         return(
             <div>
-            <ArticleCell/>
+                {
+                    ArticleListData.map((item,index) => (
+                        <ArticleCell data={item} key={index} history={history} getArticleDetail={getArticleDetail}/>
+                    ))
+                }                
             </div>
         )
     }
