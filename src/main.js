@@ -9,8 +9,7 @@ import {
 import {
     BrowserRouter as Router,
     Route,
-    Switch,
-    Redirect
+    Switch
 } from 'react-router-dom';
 import App from './App.js'
 import HeaderMenu from './containers/header/header';

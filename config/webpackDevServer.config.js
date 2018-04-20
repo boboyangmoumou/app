@@ -89,6 +89,20 @@ module.exports = function(proxy, allowedHost) {
           }
       },
       "/index": {
+          "target": "http://localhost:3000",
+          "changeOrigin": true,
+          pathRewrite: {
+            "^/v2": '/v2'
+          }
+      },
+      "/article":{
+          "target": "http://localhost:3000",
+          "changeOrigin": true,
+          pathRewrite: {
+            "^/v2": '/v2'
+          }
+      },
+      "/tags": {
         "target": "http://localhost:3000",
         "changeOrigin": true,
         pathRewrite: {

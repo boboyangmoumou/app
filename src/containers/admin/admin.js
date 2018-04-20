@@ -1,3 +1,6 @@
+/*
+fgdfgdf
+*/
 import React, {Component} from 'react';
 import {
     Switch,
@@ -20,14 +23,14 @@ export default class Admin extends Component {
         const {url} = this.props.match;
         return (
             <div>
-                <div className="container">
-                    <div className="menuContainer">
+                <div className="adminContainer">
+                    <div className="adminMenuContainer">
                         <AdminMenu 
                         history={this.props.history}
                         url={`/`}
                         />
                     </div>
-                    <div className="contentContainer">
+                    <div className="adminContentContainer">
                         <Switch>
                             <Route exact path={url} component={ManagerArticle}/>
                             <Route path={`${url}/ManagerComment`} component={ManagerComment}/>

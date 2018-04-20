@@ -4,6 +4,8 @@ import {reducer as newreducer} from './reducers/index';
 import {userReducer} from './reducers/user';
 import {checkUser} from './reducers/checkUser'
 import {ArticleReducer,ArticleDetailReducer} from './reducers/article';
+import {AddArticleReducer} from './reducers/newArticle';
+import {ManagerTagsreducer} from './reducers/manageTags';
 const win = window;
 
 const reducer = combineReducers({
@@ -11,7 +13,9 @@ const reducer = combineReducers({
     newreducer: newreducer,
     userReducer: userReducer,
     ArticleReducer: ArticleReducer,
-    ArticleDetailReducer: ArticleDetailReducer
+    ArticleDetailReducer: ArticleDetailReducer,
+    AddArticleReducer: AddArticleReducer,
+    ManagerTagsreducer: ManagerTagsreducer
 })
 
 const middlewares = [thunkMiddleware];

@@ -1,4 +1,4 @@
-.container{
+.adminContainer{
     display: flex;
     flex-direction: row;
     background: white;
@@ -7,13 +7,13 @@
     top:0;
     width: 100%;
 }
-.menuContainer{
+.adminMenuContainer{
     width: 15%;
     height: 100%;
     background: #404040;
 }
-.contentContainer{
+.adminContentContainer{
     width: 85%;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     padding: 20px;
 }

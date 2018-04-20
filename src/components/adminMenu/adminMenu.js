@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Menu, Icon} from 'antd'
 
 const menus = [
-    {url: '/managerArticle', name: '首页', iconType: 'home'},
+    {url: '/', name: '首页', iconType: 'home'},
     {url: '/newArticle', name: '发文', iconType: 'file-text'},
     {url: '/managerTags', name: '标签管理', iconType: 'tags-o'},
     {url: '/ManagerComment', name: '文章管理', iconType: 'edit'},

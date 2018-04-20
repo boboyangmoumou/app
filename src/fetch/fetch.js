@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 let config = {
-    baseURL: '/api',
+    baseURL: '',
     transfromRequest: [
         function (data) {
             let ret = '';
