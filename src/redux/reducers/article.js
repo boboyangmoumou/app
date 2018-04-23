@@ -11,7 +11,7 @@ export function ArticleReducer(state = initialState, action) {
     switch(action.type) {
         case actionTypes.GET_ARTICLE_LIST:
             return {
-                ...state, articleList: [...action.data.data.list]
+                ...state, articleList: [...action.data.list]
             };
         default:
             return state;
@@ -24,9 +24,9 @@ export function ArticleDetailReducer(state = initialState, action) {
                 isFetching: true
             }
         case actionTypes.GET_ARTICLE_DETAIL:
-        return {
-            ...state, articleDetail: action.Detaildata
-        };
+            return {
+                ...state, articleDetail: action.Detaildata
+            }
         default:
         return state;
     }

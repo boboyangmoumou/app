@@ -70,7 +70,6 @@ export const FetchNewArticle = (data) => async (dispatch) => {
         await dispatch(actions.save_article(data));
         dispatch({type: IndexActionTypes.FETCH_END})
     } catch(error) {
-        conmo
         dispatch({type: IndexActionTypes.SET_MESSAGE})
     }
 }

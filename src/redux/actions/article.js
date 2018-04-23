@@ -15,10 +15,13 @@ export const actions = {
             data
         }
     },
-    get_article_detail: (Detaildata) => ({
-        type: actionTypes.GET_ARTICLE_DETAIL,
-        Detaildata
-    }),
+    get_article_detail:function (Detaildata) {
+        console.log(Detaildata);
+        return {
+            type: actionTypes.GET_ARTICLE_DETAIL,
+            Detaildata
+        }
+    },
     fetch_start:() => ({
         type: actionTypes.FETCH_START
     }),
@@ -36,9 +39,9 @@ export const fetchArticle = (tag) => {
                 'credentials': 'include'
             },
         }).then((response) => {
-            if(response.status !== 200){
-                throw new Error(`Fail ${response.status}`)
-            }
+            // if(response.status !== 200){
+            //     throw new Error(`Fail ${response.status}`)
+            // }
             console.log(response.data)
             dispatch(actions.get_article_list(response.data))
         })
@@ -58,9 +61,9 @@ export const fetchArticleDetail = (id) => {
                 'credentials': 'include'
             },
         }).then((response) => {
-            if(response.status !== 200){
-                throw new Error(`Fail ${response.status}`)
-            }
+            // if(response.status !== 200){
+            //     throw new Error(`Fail ${response.status}`)
+            // }
             console.log(response.data)
             dispatch(actions.get_article_detail(response.data))
         })
