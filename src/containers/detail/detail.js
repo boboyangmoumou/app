@@ -12,7 +12,6 @@ class Detail extends Component {
     render(){
         const {get_article_detail,isFetching} = this.props;
         let DataStatus = JSON.stringify(get_article_detail) === '{}';
-        console.log(DataStatus);
         if (isFetching) {
             return(
                 <div>

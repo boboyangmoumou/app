@@ -10,7 +10,7 @@ export const actionTypes = {
 }
 
 export const actions = {
-    epdate_title:function (title) {
+    update_title:function (title) {
         return {
             type: actionTypes.UPDATING_TITLE,
             title
@@ -18,7 +18,7 @@ export const actions = {
     },
     update_content:function(content) {
         return {
-            type:actionTypes.UPDATING_CONTENT,
+            type: actionTypes.UPDATING_CONTENT,
             content
         }
     },
@@ -29,6 +29,7 @@ export const actions = {
         }
     },
     save_article:function (data) {
+        console.log(data)
         return {
             type:actionTypes.SAVE_ARTICLE,
             data
@@ -36,40 +37,46 @@ export const actions = {
     }
 };
 
-// export const FetchNewArticle = (data) => {
+// export const FetchNewArticle = (data) => async (dispatch) => {
 //     const {title,content,tags} = data;
-//     return (dispatch) => {
-//         const apiUrl = "/article/addArticle";
-//         return axios(apiUrl,{
-//             method: 'POST',
-//             header: {
-//                 'Content-Type': 'application/json',
-//                 'credentials': 'include'
-//             },
-//             data: {
-//                 title:title,
-//                 content:content,
-//                 tags:tags
-//             }
-//         }).then((response) => {
-//             if(response.status !== 200) {
-//                 throw new Error(`Fail ${response.status}`)
-//             }
-//             console.log(response.data)
-//             dispatch(actions.save_article)
-//         })
+//     try {
+//         dispatch({type: IndexActionTypes.FETCH_START})
+//         let newData = await post('/article/addArticle', `title=${title}``content=${content}``tags=${tags}`);
+//         console.log(newData);
+//         await dispatch(actions.save_article(newData));
+//         dispatch({type: IndexActionTypes.FETCH_END});
+//     } catch(error) {
+//         console.log(error)
+//         dispatch({type: IndexActionTypes.SET_MESSAGE})
 //     }
 // }
-
-export const FetchNewArticle = (data) => async (dispatch) => {
+export const FetchNewArticle = (data) => (dispatch) => {
     const {title,content,tags} = data;
-    try {
-        dispatch({type: IndexActionTypes.FETCH_START})
-        let {data} = await post('/article/addArticle',`title=${title}``content=${content}``tags=${tags}`)
-        console.log(data);
-        await dispatch(actions.save_article(data));
-        dispatch({type: IndexActionTypes.FETCH_END})
-    } catch(error) {
-        dispatch({type: IndexActionTypes.SET_MESSAGE})
+    dispatch({type: IndexActionTypes.FETCH_START})
+    if(title === '') {
+        dispatch({type: IndexActionTypes.SET_MESSAGE,msgContent: '请输入文章标题', msgType: 0})
+    }
+    if(title && content && tags.length > 0) {
+        return axios('/article/addArticle',{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'credentials': 'include'
+            },
+            data: {
+                title: title,
+                content: content,
+                tags: tags
+            }
+        }).then((response) => {
+            console.log(response.data)
+            dispatch(actions.save_article(response));
+            dispatch({type: IndexActionTypes.SET_MESSAGE,msgContent: response.message,msgType: response.code})
+            dispatch({type: IndexActionTypes.FETCH_END});
+        }).catch((error) => {
+            console.log(error)
+            dispatch({type: IndexActionTypes.SET_MESSAGE,msgContent: error.message,msgType: error.code})
+        })
     }
 }
+ 

@@ -8,7 +8,7 @@ const initialState={
 
 export function AddArticleReducer(state=initialState,action) {
     switch (action.type) {
-        case actionTypes.UPDATINGS_TITLE:
+        case actionTypes.UPDATING_TITLE:
             return {
                 ...state,title:action.title
             };

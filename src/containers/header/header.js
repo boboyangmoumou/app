@@ -59,9 +59,6 @@ export default class HeaderMenu extends Component {
                         style={{ lineHeight: '63px' }}
                         onClike={this.handleClick}
                     >
-                    {/* <Menu.Item key="/">nav 1</Menu.Item>
-                    <Menu.Item key="/admin">nav 2</Menu.Item>
-                    <Menu.Item key="3">nav 3</Menu.Item>  */}
                     </Menu>
                     <div className="loginposition">     
                     { UserInfo ||  userData.result  ? <Logined loginedInfo={UserInfo ||  userData.result.userName}/> : <div type="primary" onClick={this.showModal}>登录</div>}                                                                       

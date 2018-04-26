@@ -57,7 +57,6 @@ export const fetchDeltag = (removedTag) => async (dispatch) => {
 }
 export const fetchAddTag = (addTag) => async (dispatch) => {
     try{
-        console.log()
         dispatch({type: IndexActionTypes.FETCH_START})
         let {data} = await post('/tags/addTag',`name=${addTag}`);
         console.log(data);

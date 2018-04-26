@@ -6,8 +6,10 @@ let config = {
         function (data) {
             let ret = '';
             for (let it in data) {
+                console.log(data[it])
                 ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
             }
+            console.log(ret)
             return ret
         }
     ],

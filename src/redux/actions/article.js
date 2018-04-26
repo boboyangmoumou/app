@@ -9,14 +9,12 @@ export const actionTypes = {
 
 export const actions = {
     get_article_list: function (data)  {
-        console.log(data);
         return {
             type: actionTypes.GET_ARTICLE_LIST,
             data
         }
     },
     get_article_detail:function (Detaildata) {
-        console.log(Detaildata);
         return {
             type: actionTypes.GET_ARTICLE_DETAIL,
             Detaildata
@@ -63,8 +61,7 @@ export const fetchArticleDetail = (id) => {
         }).then((response) => {
             // if(response.status !== 200){
             //     throw new Error(`Fail ${response.status}`)
-            // }
-            console.log(response.data)
+            // }            
             dispatch(actions.get_article_detail(response.data))
         })
     }
