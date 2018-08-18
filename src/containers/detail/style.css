@@ -1,24 +1,28 @@
-.container{
+.container {
     background: #fff;
-    padding:10px;
+    padding: 10px;
 }
-.articleInfo{
+
+.articleInfo {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin:10px 0;
+    margin: 10px 0;
 }
-.articleInfo span{
+
+.articleInfo span {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-right: 20px;
     font-size: 12px;
 }
-.articleInfo span img{
+
+.articleInfo span img {
     margin-right: 5px;
 }
-.authorImg{
+
+.authorImg {
     width: 20px;
 }
 .content{

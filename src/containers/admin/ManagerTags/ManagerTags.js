@@ -38,7 +38,6 @@ class ManagerTags extends Component{
     render() {
         const {inputVisible,inputValue} = this.state;
         const {Alltags} = this.props;
-        console.log(Alltags);
         return (
             <div>
                 <h2 className="titleStyle">标签管理</h2>
@@ -72,7 +71,6 @@ class ManagerTags extends Component{
     }
 }
 const mapStateToProps = (state) => {
-    console.log(state.ManagerTagsreducer);
     let Alltags = state.ManagerTagsreducer;
     return{
         Alltags

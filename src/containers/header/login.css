@@ -1,4 +1,4 @@
-.container1{
+.container1 {
     height: 300px;
     width: 285px;
     display: flex;
@@ -7,19 +7,21 @@
     padding-top: 20px;
     background-color: #fff;
 }
-.container1>div{
+
+.container1>div {
     width: 50%;
     background: #eee;
-
 }
-.container1 p:nth-child(2){
+
+.container1 p:nth-child(2) {
     margin-top: 20px;
 }
 
-.container1>img{
+.container1>img {
     width: 27%;
     margin-top: 20px;
 }
-.centerP{
-    margin:25px 0;
+
+.centerP {
+    margin: 25px 0;
 }

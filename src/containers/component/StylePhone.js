@@ -1,28 +1,28 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 export default class StylePhone extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            _active: 0,
-            currentActive: 0,
-            url:'',
-            money:''
-        }
+  constructor(props) {
+    super(props)
+    this.state = {
+      _active: 0,
+      currentActive: 0,
+      url: '',
+      money: ''
     }
-    
-    render() {
-        let {style, status, storage} = this.props;
-        let newStatus = status === "loading";
-        if(!newStatus) {
-            return (
-                <div>
-                    
-                </div>
-            )
-        }else{
-            return(
-                status
-            )
-        }
+  }
+
+  render () {
+    let { status } = this.props;
+    let newStatus = status === "loading";
+    if (!newStatus) {
+      return (
+        <div>
+
+        </div>
+      )
+    } else {
+      return (
+        status
+      )
     }
+  }
 }

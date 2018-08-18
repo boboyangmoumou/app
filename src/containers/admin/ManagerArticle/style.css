@@ -3,42 +3,49 @@
     height: 600px;
     overflow: scroll;
 }
-.paginationStyle{
+
+.paginationStyle {
     margin-top: 20px;
     text-align: center;
 }
-.cellContainer{
+
+.cellContainer {
     border-bottom: solid thin #ddd;
     display: flex;
     flex-direction: row;
     height: 80px;
 }
-.cellAboutArticle{
+
+.cellAboutArticle {
     display: flex;
     flex-direction: column;
     flex: 4;
     align-content: center;
     justify-content: center;
 }
-.cellState{
+
+.cellState {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 13px;
 }
-.cellOperation{
+
+.cellOperation {
     flex: 2;
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
-.articleTitle{
+
+.articleTitle {
     margin-bottom: 10px;
     font-size: 15px;
     color: #000;
 }
-.articleInfo span{
+
+.articleInfo span {
     font-size: 12px;
     margin-right: 10px;
     display: inline-block;
